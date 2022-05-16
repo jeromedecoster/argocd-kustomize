@@ -9,7 +9,7 @@ spec:
   source:
     repoURL: git@github.com:jeromedecoster/argocd-kustomize.git
     targetRevision: HEAD
-    path: .
+    path: overlays/staging
   destination: 
     server: https://kubernetes.default.svc
     namespace: my-app
