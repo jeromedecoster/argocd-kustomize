@@ -7,8 +7,9 @@ spec:
   project: default
 
   source:
-    repoURL: git@github.com:jeromedecoster/argocd-kustomize.git
+    repoURL: https://github.com/jeromedecoster/argocd-test.git
     targetRevision: HEAD
+    path: .
   destination: 
     server: https://kubernetes.default.svc
     namespace: my-app
