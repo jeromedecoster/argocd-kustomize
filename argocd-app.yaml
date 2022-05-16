@@ -9,7 +9,7 @@ spec:
   source:
     repoURL: https://github.com/jeromedecoster/argocd-kusomize.git
     targetRevision: HEAD
-    path: .
+    path: overlays/staging
   destination: 
     server: https://kubernetes.default.svc
     namespace: my-app
