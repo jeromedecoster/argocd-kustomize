@@ -1,9 +1,8 @@
 bases:
 - ../../base
 
-# https://fabianlee.org/2022/04/15/kubernetes-kustomize-transformations-with-patchesjson6902/
-# https://github.com/fabianlee/kustomize-overlays-with-reload/blob/main/overlays/tiny-tools-ds-to-dep/kustomization.yaml
 patches:
+
 - target:
     kind: Deployment
     name: my-app
@@ -13,7 +12,7 @@ patches:
     - op: add
       path: /spec/template/spec/containers/0/args
       value: 
-          - "-text=version 1-2-0"
+          - "-text=version 1-1-0"
 
 - target:
     kind: Service
@@ -21,4 +20,4 @@ patches:
   patch: |-
     - op: replace
       path: /spec/ports/0/nodePort
-      value: 30200
+      value: 30100
