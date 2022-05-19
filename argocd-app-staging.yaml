@@ -1,0 +1,23 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: argocd-app
+  namespace: argocd
+spec:
+  project: default
+
+  source:
+    repoURL: git@github.com:jeromedecoster/argocd-kustomize.git
+    targetRevision: HEAD
+    path: overlays/staging
+  destination: 
+    server: https://kubernetes.default.svc
+    namespace: staging
+
+  syncPolicy:
+    syncOptions:
+    - CreateNamespace=true
+
+    automated:
+      selfHeal: true
+      prune: true 
